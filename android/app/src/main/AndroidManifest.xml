@@ -4,7 +4,7 @@
         android:maxSdkVersion="28" />
 
     <application
-        android:label="img_frame"
+        android:label="imgFrame"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

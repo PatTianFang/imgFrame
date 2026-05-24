@@ -44,6 +44,11 @@ class _PhotoFramePageState extends State<PhotoFramePage> {
             titleSpacing: 24,
             title: const Text('imgFrame'),
             actions: [
+              IconButton(
+                tooltip: '关于',
+                onPressed: _showAbout,
+                icon: const Icon(Icons.info_outline),
+              ),
               Padding(
                 padding: const EdgeInsets.only(right: 12),
                 child: FilledButton.icon(
@@ -173,6 +178,26 @@ class _PhotoFramePageState extends State<PhotoFramePage> {
 
   void _onApplySettingsToAll() {
     _showMessage(_controller.applySelectedSettingsToAll());
+  }
+
+  void _showAbout() {
+    showAboutDialog(
+      context: context,
+      applicationName: 'imgFrame',
+      applicationVersion: '1.0',
+      applicationIcon: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image.asset('assets/branding/logo.png', width: 56, height: 56),
+      ),
+      children: const [
+        SizedBox(height: 8),
+        SelectableText('作者：埃及猪肉'),
+        SizedBox(height: 6),
+        SelectableText('GitHub：https://github.com/PatTianFang'),
+        SizedBox(height: 6),
+        SelectableText('邮箱：PatTianFang@outlook.com'),
+      ],
+    );
   }
 
   void _showMessage(String message) {

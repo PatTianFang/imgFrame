@@ -1,11 +1,11 @@
 {
-    "name": "img_frame",
-    "short_name": "img_frame",
+    "name": "imgFrame",
+    "short_name": "imgFrame",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A cross-platform Flutter photo frame tool.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
