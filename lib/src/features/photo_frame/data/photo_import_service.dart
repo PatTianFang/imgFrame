@@ -25,6 +25,7 @@ class PhotoImportService {
     }
 
     final photos = <PhotoAsset>[];
+    final batchId = DateTime.now().microsecondsSinceEpoch;
     for (final file in result.files) {
       final bytes = file.bytes;
       if (bytes == null || bytes.isEmpty) {
@@ -34,7 +35,7 @@ class PhotoImportService {
       final exif = await _reader.read(bytes);
       photos.add(
         PhotoAsset(
-          id: '${file.name}-${file.size}-${photos.length}',
+          id: '${file.name}-${file.size}-$batchId-${photos.length}',
           name: file.name,
           bytes: bytes,
           width: size.$1,

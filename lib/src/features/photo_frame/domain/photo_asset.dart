@@ -62,11 +62,17 @@ class PhotoExif {
 
   String get cameraLine {
     final parts = [
-      _joinMakeAndModel(make, model),
+      cameraBodyLine,
       if (lens != null && lens!.isNotEmpty) lens,
     ].whereType<String>().where((value) => value.trim().isNotEmpty).toList();
     return parts.isEmpty ? 'Unknown Camera' : parts.join(' ');
   }
+
+  String get cameraBodyLine =>
+      _joinMakeAndModel(make, model) ?? 'Unknown Camera';
+
+  String get lensLine =>
+      lens == null || lens!.isEmpty ? 'Lens unavailable' : lens!;
 
   String get exposureLine {
     final parts = [
