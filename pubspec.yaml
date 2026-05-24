@@ -1,0 +1,24 @@
+name: img_frame
+description: A cross-platform Flutter photo frame tool that reads EXIF metadata and exports framed images.
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  exif_reader: ^4.1.0
+  file_picker: ^11.0.2
+  file_saver: ^0.4.0
+  image: ^4.8.0
+  path: ^1.9.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
